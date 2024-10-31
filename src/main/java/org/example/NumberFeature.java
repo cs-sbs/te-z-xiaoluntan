@@ -9,7 +9,13 @@ public class NumberFeature {
         Scanner in = new Scanner(System.in);
         inputNumber = in.nextInt();
         // 你的代码逻辑
-
+        result = test(inputNumber);
         System.out.println(result);
+    }
+
+    public static int test(int inputNumber) {
+        int result = 0;
+
+        return result;
     }
 }
