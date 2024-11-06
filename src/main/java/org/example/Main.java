@@ -1,19 +1,33 @@
-package org.example;
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+                int oddCount = 0;
+                int evenCount = 0;
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+                while (true) {
+                    String input = scanner.next();
+                    if (input.equals("-1")) {
+                        break;
+                    }
+                    try {
+                        int num = Integer.parseInt(input);
+                        if (num >= 0 && num < 100000) {
+                            if (num % 2 == 0) {
+                                evenCount++;
+                            } else {
+                                oddCount++;
+                            }
+                        } else {
+                            System.out.println("请输入一个在范围（0,100000）内的正整数或-1来结束输入。");
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("请输入一个正整数或-1来结束输入。");
+                    }
+                }
+
+                System.out.println(oddCount + " " + evenCount);
+                scanner.close();
+            }
         }
-    }
-}
