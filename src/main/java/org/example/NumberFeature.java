@@ -1,12 +1,14 @@
 package org.example;
+
 import java.util.Scanner;
+
 public class NumberFeature {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入一个非负整数（0-1000000）：");
+        System.out.println("请输入一个非负整数(0-1000000):");
         int number = scanner.nextInt();
         int result = calculateOddEvenFeatureValue(number);
-        System.out.println("计算结果为：" + result);
+        System.out.println("计算结果为:" + result);
         scanner.close();
     }
 
