@@ -11,8 +11,6 @@ public class NumberFeature {
         // 你的代码逻辑
 
         digital_eigenvalue(inputNumber, result);
-
-
     }
 
     public static void digital_eigenvalue(int inputNumber, int result) {
@@ -29,4 +27,4 @@ public class NumberFeature {
         }
         System.out.println(result);
     }
-
+}
