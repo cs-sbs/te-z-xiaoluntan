@@ -4,28 +4,30 @@ import java.util.Scanner;
 
 public class NumberFeature {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入一个非负整数(0-1000000):");
-        int number = scanner.nextInt();
-        int result = calculateOddEvenFeatureValue(number);
-        System.out.println("计算结果为:" + result);
-        scanner.close();
+        int inputNumber; // 输入的数字
+        int result = 0; // 输出结果
+        Scanner in = new Scanner(System.in);
+        inputNumber = in.nextInt();
+        // 你的代码逻辑
+
+        digital_eigenvalue(inputNumber, result);
+
+
     }
 
-    private static int calculateOddEvenFeatureValue(int number) {
-        int result = 0;
-        int position = 1;
-        while (number > 0) {
-            int digit = number % 10;
-            boolean isDigitEven = digit % 2 == 0;
-            boolean isPositionEven = position % 2 == 0;
-            if (isDigitEven == isPositionEven) {
-                result += (int) Math.pow(2, position - 1);
-            }
-            number /= 10;
-            position++;
+    public static void digital_eigenvalue(int inputNumber, int result) {
+        int number;
+        int digit_position = 1;
+        int binary_bit_value = 1;
+        while (inputNumber > 0) {
+            number = inputNumber % 10;
+            inputNumber = inputNumber / 10;
+            if (number % 2 == digit_position % 2)
+                result += binary_bit_value;
+            binary_bit_value *= 2;
+            digit_position++;
         }
-        return result;
+        System.out.println(result);
     }
 }
 
