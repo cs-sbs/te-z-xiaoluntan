@@ -29,5 +29,4 @@ public class NumberFeature {
         }
         System.out.println(result);
     }
-}
 
